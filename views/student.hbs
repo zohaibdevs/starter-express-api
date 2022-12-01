@@ -1,0 +1,249 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2>{{student.firstName}}
+      {{student.lastName}}
+      - student:
+      {{student.studentID}}
+    </h2>
+    <hr />
+
+    <form method="post" action="/student/update">
+
+      <input type="hidden" name="studentID" value="{{student.studentID}} " />
+
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="firstName">First Name:</label>
+              <input
+                class="form-control"
+                id="firstName"
+                name="firstName"
+                type="text"
+                value="{{student.firstName}} "
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="lastName">Last Name:</label>
+              <input
+                class="form-control"
+                id="last_name"
+                name="lastName"
+                type="text"
+                value="{{student.lastName}} "
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                type="text"
+                value="{{student.email}} "
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input
+                class="form-control"
+                id="phone"
+                name="phone"
+                type="tel"
+                value="{{student.phone}} "
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="addressStreet">Address (Street):</label>
+              <input
+                class="form-control"
+                id="addressStreet"
+                name="addressStreet"
+                type="text"
+                value="{{student.addressStreet}} "
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <label for="addressCity">Address (City):</label>
+            <input
+              class="form-control"
+              id="addressCity"
+              name="addressCity"
+              type="text"
+              value="{{student.addressCity}} "
+            />
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="addressState">Address (State):</label>
+              <input
+                class="form-control"
+                id="addressState"
+                name="addressState"
+                type="text"
+                value="{{student.addressState}} "
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="addressPostal">Address (Zip Code):</label>
+              <input
+                class="form-control"
+                id="addressPostal"
+                name="addressPostal"
+                type="text"
+                value="{{student.addressPostal}} "
+              />
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+
+      <fieldset>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Status:</label><br />
+              <label class="checkbox-inline">
+                {{#equal student.status "Full Time" }}
+                  <input
+                  type="radio"
+                  id="statusFT"
+                  name="status"
+                  checked=""
+                  value="Full Time"
+                />
+                Full Time
+              </label>
+                {{/equal}}
+                
+              <label class="checkbox-inline">
+                {{#equal student.status "Part Time" }}
+                  <input
+                  type="radio"
+                  id="statusPT"
+                  name="status"
+                  value="Part Time"
+                />
+                Part Time
+              </label>
+                {{/equal}}
+                
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="program">Program</label>
+              <select class="form-control" name="program" id="program">
+                {{#equal student.program "ACF"}}
+                  <option value="ACF" selected="">ACF - Accounting and Finance</option>
+                {{/equal}}
+                {{#equal student.program "ACF"}}
+                  <option value="ACF">ACF - Accounting and Finance</option>
+                {{/equal}}
+                {{#equal student.program "AVO"}}
+                  <option value="AVO">AVO - Aviation Operations</option>
+                {{/equal}}
+                {{#equal student.program "DAN"}}
+                  <option value="DAN">DAN - 3D Animation</option>
+                {{/equal}}
+                {{#equal student.program "CPP"}}
+                  <option value="CPP">CPP - Computer Programming</option>
+                {{/equal}}
+                {{#equal student.program "CPA"}}
+                  <option value="CPA">CPA - Computer Programming and Analysis</option>
+                {{/equal}}
+                {{#equal student.program "CTY"}}
+                  <option value="CTY">CTY - Computer Systems Technology</option>
+                {{/equal}}
+                {{#equal student.program "CSN"}}
+                  <option value="CSN">CSN - Computer Systems Technician</option>
+                {{/equal}}
+                {{#equal student.program "BSD"}}
+                  <option value="BSD">BSD - Software Development (Honours
+                    Bachelor of Technology)</option>
+                {{/equal}}
+
+                {{#equal student.program "IFS"}}
+                  <option value="IFS" selected="">IFS - Informatics and
+                    Security(Honours Bachelor of Technology)</option>
+                {{/equal}}
+                {{#equal student.program "DAS"}}
+                  <option value="DAS">DAS - Data Science and Analytics program
+                    (Honours Bachelor of Technology)</option>
+                {{/equal}}
+
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="isInternationalStudent">International Student?</label>
+              <input
+                class="form-control"
+                type="checkbox"
+                id="isInternationalStudent"
+                name="isInternationalStudent"
+                checked=""
+              />
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label for="expectedCredential">Expected Credential:</label>
+              <input
+                class="form-control"
+                id="expectedCredential"
+                name="expectedCredential"
+                type="text"
+                value="{{student.expectedCredential}} "
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="registrationDate">Registration Date</label>
+              <input
+                class="form-control"
+                id="registrationDate"
+                name="registrationDate"
+                type="text"
+                value="{{student.registrationDate}} "
+                readonly=""
+              />
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <hr />
+      <input
+        type="submit"
+        class="btn btn-primary pull-right"
+        value="Update Student"
+      /><br /><br /><br />
+
+    </form>
+  </div>
+</div>

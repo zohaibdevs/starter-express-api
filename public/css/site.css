@@ -1,0 +1,31 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #e8eef2;
+}
+
+.navbar {
+  background-color: #37393a;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #e8eef2;
+}
+
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a {
+  color: #d6c9c9;
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand {
+  color: #d6c9c9;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #e8eef2;
+}
+
+h2 {
+  color: #37393a;
+}

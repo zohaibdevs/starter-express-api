@@ -1,0 +1,140 @@
+<html lang="en"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/site.css" type="text/css">
+    <title>Home</title>
+      <div class="row">
+          <div class="col-md-12">
+      
+              <h2>Add Student</h2>
+
+              <br>
+      
+              <form method="post" action="/students/add">
+      
+                  <fieldset>
+                      <legend>Student Information</legend>
+                      
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="firstName">First Name:</label>
+                                  <input class="form-control" id="firstName" name="firstName" type="text">
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="last_name">Last Name:</label>
+                                  <input class="form-control" id="lastName" name="lastName" type="text">
+                              </div>
+                          </div>
+                          <!-- <div class="col-md-4">
+                              <div class="form-group">
+                                  <label for="studentID">Student ID:</label>
+                                  <input class="form-control" id="studentID" name="studentID" type="text"  />
+                              </div>
+                          </div> -->
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="email">Email:</label>
+                                  <input class="form-control" id="email" name="email" type="email">
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="phone">Phone:</label>
+                                  <input class="form-control" id="phone" name="phone" type="text">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="addressStreet">Address (Street):</label>
+                                  <input class="form-control" id="addressStreet" name="addressStreet" type="text">
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <label for="addressCity">Address (City):</label>
+                              <input class="form-control" id="addressCity" name="addressCity" type="text">
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="addressState">Address (State):</label>
+                                  <input class="form-control" id="addressState" name="addressState" type="text">
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="addressPostal">Address (Zip Code):</label>
+                                  <input class="form-control" id="addressPostal" name="addressPostal" type="text">
+                              </div>
+                          </div>
+                      </div>
+      
+      
+                  <!-- </fieldset>
+      
+                  <fieldset> -->
+                      <!-- <legend>Company Information</legend> -->
+                      <div class="row">
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label>Status:</label><br>
+                                  <label class="checkbox-inline">
+                                      <input type="radio" id="statusFT" name="status" value="Full Time"> Full Time
+                                  </label>
+                                  <label class="checkbox-inline">
+                                      <input type="radio" id="statusFT" name="status" value="Part Time"> Part Time
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="program">Program:</label>
+                                  <select class="form-control" name="program" id="program">
+                                     {{#each programs}}
+                                       <option value="{{ programCode }}">{{programCode}} - {{programName}}</option>
+                                     {{/each}}
+                                     {{#unless programs}}
+                                        <option value="">{{message}}</option>
+                                    {{/unless}}
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="isInternationalStudent">International Student?</label>
+                                  <input class="form-control" type="checkbox" name="isInternationalStudent">
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="form-group">
+                                  <label for="expectedCredential">Expected Credential:</label>
+                                  <input class="form-control" id="expectedCredential" name="expectedCredential" type="text">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                  <label for="registrationDate">Registration Date:</label>
+                                  <input class="form-control" id="registrationDate" name="registrationDate" type="text">
+                              </div>
+                          </div>
+                      </div>
+      
+                  </fieldset>
+      
+                  <hr>
+      
+                  <input type="submit" class="btn btn-primary pull-right" value="Add Employee"><br><br><br>
+      
+              </form>
+          </div>
+ 
